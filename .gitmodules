@@ -1,6 +1,0 @@
-[submodule "vendor/cglm"]
-	path = vendor/cglm
-	url = https://github.com/recp/cglm.git
-[submodule "vendor/glad"]
-	path = vendor/glad
-	url = https://github.com/Dav1dde/glad.git

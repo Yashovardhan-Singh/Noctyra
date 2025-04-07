@@ -17,10 +17,6 @@ glad = declare_dependency(
     sources: glad_sources
 )
 
-cglm = declare_dependency(
-    include_directories: include_directories('vendor/include/cglm')
-)
-
 # Compile the engine
 engine_sources = files(
     'src/renderer.c',
@@ -31,7 +27,7 @@ engine = shared_library(
     'noctyra',
     engine_sources,
     include_directories: include_directories('include'),
-    dependencies: [glfw, opengl, glad, cglm],
+    dependencies: [glfw, opengl, glad],
     install: true
 )
 
@@ -42,7 +38,7 @@ executable(
         'example/main.c',
     ],
     include_directories: include_directories('include'),
-    dependencies: [glfw, opengl, glad, cglm],
+    dependencies: [glfw, opengl, glad],
     link_with: engine,
     install: true
 )

@@ -2,20 +2,6 @@
 
 A 2d game engine for begginers
 
-## Dependencies
-
-This project requires:
-
-- cglm (https://github.com/recp/cglm)
-- glad (https://glad.dav1d.de/)
-
-Place them in `vendor/` like so:
-vendor/
-├── cglm/
-└── glad/
-
-or, run with `git clone --recurse-submodules https://github.com/username/Noctyra2D.git`  
-
 ## License Summary
 
 This Engine Is Open Source And Free To Use For Commercial And Non-Commercial Projects — Provided You Follow These Rules:
