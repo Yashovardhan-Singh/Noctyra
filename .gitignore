@@ -1,0 +1,9 @@
+.vscode/
+build/
+
+/vendor/*
+
+!/vendor/cglm
+!/vendor/glad
+
+/vendor/glad/glad.c
