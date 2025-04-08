@@ -1,7 +1,4 @@
-#include "include/window.h"
-#include "include/renderer.h"
-#include "include/sprite.h"
-#include "include/texture.h"
+#include "include/noctyra2d.h"
 
 int main(int argc, char *argv[]) {
     Window win;

@@ -1,25 +1,3 @@
-/*
-Noctyra2D — 2D Game Engine  
-Copyright (C) 2025 Yashovardhan Singh  
-All Rights Reserved Except Where Otherwise Stated.
-
-Licensed Under The GNU Affero General Public License v3.0 (AGPL-3.0)  
-See LICENSE And LICENSE-EXCEPTIONS For Details.
-
-Additional Conditions Apply:  
-- Attribution Required  
-- No DRM  
-- No Military Use  
-- Trademark Protection Applies To The Name "Noctyra2D"
-
-This Software Is Provided "As-Is" Without Warranty Of Any Kind.
-
-Contributions Are Copyright Their Respective Authors  
-And Licensed Under AGPL-3.0 Unless Stated Otherwise.
-
-Powered By Noctyra2D — (c) 2025 Yashovardhan Singh
-*/
-
 #ifndef WINDOW_H
 #define WINDOW_H
 

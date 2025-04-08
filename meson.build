@@ -43,7 +43,7 @@ executable(
         'example/main.c',
     ],
     include_directories: include_directories('include', 'vendor/include'),
-    dependencies: [glfw, opengl, glad, m],
+    # dependencies: [glfw, opengl, glad, m],
     link_with: engine,
     install: true
 )
