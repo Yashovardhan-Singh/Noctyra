@@ -1,5 +1,7 @@
 #include "include/window.h"
 #include "include/renderer.h"
+#include "include/sprite.h"
+#include "include/texture.h"
 
 int main(int argc, char *argv[]) {
     Window win;
@@ -11,27 +13,29 @@ int main(int argc, char *argv[]) {
     Quad2dBuffer qb;
     Q2dBufInit(&qb);
 
-    Quad2d quad = {
-        .id = 1,
-        .layer = LAYER_FOREGROUND,
-        .a = {  0.0f,  1.0f, 0.0f, 0.0f },
-        .b = {  1.0f,  1.0f, 1.0f, 0.0f },
-        .c = {  0.0f,  0.0f, 0.0f, 1.0f },
-        .d = {  1.0f,  0.0f, 1.0f, 1.0f },
+    Texture t = LoadTexture("example/assets/nyan.jpg");
+
+    Sprite s = {
+        .pos = { 400.0f, 400.0f },
+        .size = { 256.0f, 256.0f },
+        .id = 0,
+        .layer = LAYER_PLAYER,
+        .uv_min = { 0.0f, 0.0f },
     };
 
-    Q2dBufPush(&qb, quad);
+    PushSprite(s, ScreenSize(&win), &qb);
 
     UploadData(&renderer, &qb);
     
     while (!WindowShouldClose(&win)) {
         SetBackgroundColor(COLOR_CYAN);
         UseShader(&renderer, 0);
-        Draw(&renderer, 0, qb.size * 6);
+        Draw(&renderer, 0, qb.size * 6, t.id);
         UpdateWindow(&win);
     }
 
     Q2dBufFree(&qb);
+    FreeTexture(&t);
     DestroyRenderer(&renderer);
     DestroyWindow(&win);
     return 0;

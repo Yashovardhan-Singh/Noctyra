@@ -52,3 +52,7 @@ void DestroyWindow(Window *win) {
 int WindowShouldClose(Window *win) {
     return glfwWindowShouldClose(win->handle);
 }
+
+Vec2 ScreenSize(Window* win) {
+    return (Vec2) { win->width, win->height};
+}

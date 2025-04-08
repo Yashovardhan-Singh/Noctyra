@@ -134,8 +134,9 @@ void UploadData(Renderer *renderer, const Quad2dBuffer* qb) {
 }
 
 // Render Function
-void Draw(Renderer *renderer, u32 shaderIndex, u32 numElements) {
+void Draw(Renderer *renderer, u32 shaderIndex, u32 numElements, u32 textureId) {
     glBindVertexArray(renderer->VAO);
+    glBindTexture(GL_TEXTURE_2D, textureId);
     UseShader(renderer, shaderIndex);
     glDrawElements(GL_TRIANGLES, numElements, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);

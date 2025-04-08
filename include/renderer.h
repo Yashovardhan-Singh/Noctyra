@@ -25,7 +25,7 @@ void InitRenderer(Renderer *renderer, const char *vertexPath, const char *fragme
 void AddShader(Renderer *renderer, const char *vertexPath, const char *fragmentPath);
 void UseShader(Renderer *renderer, u32 index);
 void UploadData(Renderer *renderer, const Quad2dBuffer *qb);
-void Draw(Renderer *renderer, u32 shaderIndex, u32 numIndices);
+void Draw(Renderer *renderer, u32 shaderIndex, u32 numIndices, u32 textureId);
 void DestroyRenderer(Renderer *renderer);
 void SetBackgroundColor(Color col);
 

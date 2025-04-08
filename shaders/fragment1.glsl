@@ -2,6 +2,10 @@
 
 out vec4 FragCol;
 
+in vec2 texCoord;
+
+uniform sampler2D uTex;
+
 void main() {
-    FragCol = vec4(1.0f, 0.0f, 1.0f, 1.0f);
+    FragCol = texture(uTex, texCoord);
 }

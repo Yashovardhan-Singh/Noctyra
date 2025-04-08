@@ -27,6 +27,7 @@ Powered By Noctyra2D — (c) 2025 Yashovardhan Singh
 #include <GLFW/glfw3.h>
 
 #include "include/utils.h"
+#include "vec.h"
 
 typedef struct {
     GLFWwindow *handle;
@@ -38,5 +39,6 @@ void InitWindow(Window* win, int width, int height, const char* title);
 void UpdateWindow(Window* win);
 void DestroyWindow(Window* win);
 int WindowShouldClose(Window* win);
+Vec2 ScreenSize(Window *win);
 
 #endif

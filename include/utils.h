@@ -50,4 +50,13 @@ typedef u8 bool;
 #define W_LOG(msg, ...) LOG("WARN", msg, ##__VA_ARGS__)     // warn
 #define I_LOG(msg, ...) LOG("INFO", msg, ##__VA_ARGS__)     // info
 
+static inline f32 PixelToNdcX(f32 x, f32 screenWidth) {
+    return (x / screenWidth) * 2.0f - 1.0f;
+}
+
+static inline f32 PixelToNdcY(f32 y, f32 screenHeight) {
+    return (y / screenHeight) * 2.0f - 1.0f;
+}
+
+
 #endif // UTILS_H
