@@ -2,6 +2,9 @@
 
 A 2d game engine for begginers
 
+## Dependencies
+* [GLFW](https://github.com/glfw/glfw)
+
 ## License Summary
 
 This Engine Is Open Source And Free To Use For Commercial And Non-Commercial Projects — Provided You Follow These Rules:
