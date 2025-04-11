@@ -1,5 +1,12 @@
 #include "include/window.h"
 
+#include "vendor/include/glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
 // call back from fixing framebuffer on window resize
 void _FrameBufferSizeCallback(GLFWwindow* win, int width, int height) {
     glViewport(0, 0, width, height);

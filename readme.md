@@ -1,6 +1,9 @@
 # Noctyra2D — 2D Game Engine
 
-A 2d game engine for begginers
+A 2d game engine for beginners
+
+**ATTENTION!** This project has been abandoned as the author doesn't feel like
+refactoring the terrible code he wrote.
 
 ## Dependencies
 * [GLFW](https://github.com/glfw/glfw)

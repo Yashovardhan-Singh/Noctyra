@@ -1,6 +1,10 @@
 #include "include/quad.h"
 
+#include "vendor/include/glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <string.h>
 
 #define Q2D_INITIAL_CAPACITY 1024

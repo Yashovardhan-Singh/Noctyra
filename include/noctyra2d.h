@@ -21,15 +21,15 @@ Powered By Noctyra2D — (c) 2025 Yashovardhan Singh
 */
 
 #ifndef NOCTYRA2D_H
-#define NOCTYRA2d_H
+#define NOCTYRA2D_H
 
-#include <glad/glad.h>
+#if defined(__GNUC__) || defined(__clang__)
+    #define STATIC_INLINE inline static __attribute__((always_inline))
+#else
+    #define STATIC_INLINE inline static
+#endif
+
 #include <GLFW/glfw3.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-#define STATIC_INLINE inline static __attribute__((always_inline)) 
 
 // Color
 typedef struct {
@@ -56,9 +56,9 @@ typedef struct {
 #define COLOR_PURPLE     ((Color){0.5f, 0.0f, 0.5f, 1.0f})
 #define COLOR_TRANSPARENT ((Color){0.0f, 0.0f, 0.0f, 0.0f})
 
-
-
-
+STATIC_INLINE Color ColorFromRGBA(u8 r, u8 g, u8 b, u8 a) {
+    return (Color) { r/255.0f, g/255.0f, b/255.0f, a/255.0f };
+}
 
 // utils
 // Unsigned Integer Types
@@ -116,10 +116,6 @@ STATIC_INLINE f32 PixelToNdcY(f32 y, f32 screenHeight) {
     return (y / screenHeight) * 2.0f - 1.0f;
 }
 
-
-
-
-
 // Quad
 typedef struct {
     f32 x, y;
@@ -170,10 +166,6 @@ Quad2d* Q2dBufData();
 usize Q2dBufFindById(Quad2dBuffer *qb, u32 id);
 void Q2dBufSort(Quad2dBuffer *qb, int (*cmp)(const Quad2d*, const Quad2d*));
 
-
-
-
-
 // vec
 typedef struct {
     float x, y;
@@ -194,10 +186,6 @@ Vec2 Vec2Lerp(Vec2 v0, Vec2 v1, f32 t); // parameter "t" MUST BE in range [0, 1]
 f32 Vec2Project(Vec2 a, Vec2 b); // Projection of vector a on vector b
 Vec2 Vec2Rotate(Vec2 v, Vec2 p, f32 degrees); // rotate v, around point p, degrees is degrees
 
-
-
-
-
 // window
 typedef struct {
     GLFWwindow *handle;
@@ -210,10 +198,6 @@ void UpdateWindow(Window* win);
 void DestroyWindow(Window* win);
 int WindowShouldClose(Window* win);
 Vec2 ScreenSize(Window *win);
-
-
-
-
 
 // renderer
 typedef struct {
@@ -235,10 +219,6 @@ void Draw(Renderer *renderer, u32 shaderIndex, u32 numIndices, u32 textureId);
 void DestroyRenderer(Renderer *renderer);
 void SetBackgroundColor(Color col);
 
-
-
-
-
 // sprite
 typedef struct {
     Vec2 pos;       // ScreenSpace
@@ -250,10 +230,6 @@ typedef struct {
 
 void PushSprite(Sprite s, Vec2 screenSize, Quad2dBuffer* qb);
 
-
-
-
-
 // texture
 typedef struct {
     u32 id;
@@ -262,6 +238,5 @@ typedef struct {
 
 Texture LoadTexture(const char* path);
 void FreeTexture(Texture* tex);
-
 
 #endif

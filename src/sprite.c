@@ -1,5 +1,12 @@
 #include "include/sprite.h"
 
+#include "vendor/include/glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
 void PushSprite(Sprite s, Vec2 screenSize, Quad2dBuffer* qb) {
     Quad2d q = {0}; // Zero Init
 

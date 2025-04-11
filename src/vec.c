@@ -1,5 +1,12 @@
 #include "include/vec.h"
 
+#include "vendor/include/glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
 Vec2 Vec2Add(Vec2 a, Vec2 b) {
     return (Vec2) { a.x + b.x, a.y + b.y };
 }

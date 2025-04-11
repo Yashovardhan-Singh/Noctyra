@@ -1,5 +1,12 @@
 #include "include/texture.h"
 
+#include "vendor/include/glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "vendor/include/stb_image.h"
 

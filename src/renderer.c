@@ -1,5 +1,12 @@
 #include "include/renderer.h"
 
+#include "vendor/include/glad/glad.h"
+#include <GLFW/glfw3.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
 char *ReadShaderFile(const char *filePath) {
     FILE *file = fopen(filePath, "r");
     if (!file) {
